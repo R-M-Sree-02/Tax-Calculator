@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>
+          <%=title%>
+     </title>
+     <link rel="stylesheet" href="css/style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap" rel="stylesheet">
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+     <nav>
+          <h1 class="logo">&lt;/&gt;API</h1>
+
+          <h1 class="LoginPage">
+               <%=title%> Page
+          </h1>
+     </nav>
+
+     <div class="container loginDiv animation">
+
+          <form id="login" class="<%= title == 'Login' ? 'show' : 'hide' %>">
+               <label for="userName">Email</label>
+               <input id="loginEmail" type="email" required maxlength="50">
+
+               <label for="password">Password</label>
+               <input id="loginPassword" type="password" required minlength="4" maxlength="12">
+               <br>
+               <br>
+               <p id="loginStatus"></p>
+
+               <button type="submit">Login</button>
+          </form>
+
+
+          <form id="signup" class="<%= title == 'SignUp' ? 'show' : 'hide' %>">
+               <label for="userName">User Name</label>
+               <input id="userName" type="text" minlength="3" maxlength="50" required>
+               <p id="signupName" class="hide error-msg">Invalid User name</p>
+
+               <label for="userEmail">User Email</label>
+               <input id="userEmail" type="email" maxlength="50" required>
+               <p id="signupEmail" class="hide error-msg">Invalid Email</p>
+
+               <label for="password">Password</label>
+               <input id="passwordSignup" type="password" minlength="4" maxlength="50" required>
+               <p id="signupPass" class="hide error-msg">Password must be at least 4 characters</p>
+
+               <label for="confirmPassword">Confirm Password</label>
+               <input id="confirmPassword" type="password" minlength="4" maxlength="50" required>
+               <p id="signupConfirmPass" class="hide error-msg">Passwords not matched</p>
+
+               <button type="submit">SignUp</button>
+          </form>
+
+
+          <a href="<%=directTo%>">
+               <%=content%>
+          </a>
+     </div>
+
+     <script type="module" src="/script/auth.js"></script>
+</body>
+
+</html>
