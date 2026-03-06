@@ -47,7 +47,7 @@ $('#signup').on('submit', async function (e) {
           nameStatus = $('#signupName'),
           confirmPassStatus = $('#signupConfirmPass');
 
-     if (userEmail.endsWith("@gmail.com")) {
+     if (!userEmail.endsWith("@gmail.com")) {
           emailStatus.show();
           return;
      };
